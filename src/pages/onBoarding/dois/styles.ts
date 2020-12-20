@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background: #7b68ee;
+  background: #fff;
 `;
 
 export const CreateAccontButton = styled.TouchableOpacity`

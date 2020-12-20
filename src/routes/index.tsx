@@ -7,11 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const AppStack = createStackNavigator();
 
-import Um from '../pages/onBoarding/um';
-import Dois from '../pages/onBoarding/dois';
-import Tres from '../pages/onBoarding/tres';
-import Quatro from '../pages/onBoarding/quartro';
-import Quinto from '../pages/onBoarding/Quinto';
+import Onboarding from '../pages/onBoarding/index';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -24,11 +20,7 @@ const AppRoutes: React.FC = () => {
           gestureDirection: 'horizontal',
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
-        <AppStack.Screen name="Onboarding1" component={Um} />
-        <AppStack.Screen name="Onboarding2" component={Dois} />
-        <AppStack.Screen name="Onboarding3" component={Tres} />
-        <AppStack.Screen name="Onboarding4" component={Quatro} />
-        <AppStack.Screen name="Onboarding5" component={Quinto} />
+        <AppStack.Screen name="Onboarding1" component={Onboarding} />
       </AppStack.Navigator>
     </NavigationContainer>
   );
