@@ -23,7 +23,7 @@ const Onboarding: React.FC = () => {
             backgroundColor: '#5CC859',
             borderBottomColor: '#A8E9B5',
           }}>
-          <Text style={styles.buttonTextNext}>VOLTAR</Text>
+          <Text style={styles.buttonTextNext}>PRÓXIMO</Text>
         </View>
       }
       prevButton={
@@ -122,11 +122,11 @@ const styles = StyleSheet.create({
   },
   buttonTextNext: {
     color: '#fff',
-    fontSize: 30,
+    fontSize: 20,
   },
   buttonTextBack: {
     color: '#020202',
-    fontSize: 30,
+    fontSize: 20,
   },
 });
 
