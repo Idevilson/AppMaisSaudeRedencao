@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, ImageBackground, StyleSheet} from 'react-native';
+import {View, Image, ImageBackground} from 'react-native';
 
 import {Container} from './styles';
 
@@ -47,12 +47,4 @@ const Um: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  rectangle: {
-    position: 'absolute',
-    width: 50 * 2,
-    height: 50,
-    backgroundColor: '#f80707',
-  },
-});
 export default Um;

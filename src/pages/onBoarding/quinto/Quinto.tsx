@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ImageBackground, Image} from 'react-native';
+import {View, ImageBackground, Image, Text} from 'react-native';
 
 //import {useNavigation} from '@react-navigation/native';
 
@@ -45,6 +45,16 @@ const Quatro: React.FC = () => {
               />
             </ImageBackground>
           </View>
+          <Text
+            style={{
+              color: '#fff',
+              marginLeft: 90,
+              fontSize: 30,
+              marginTop: -27,
+            }}>
+            {`CAMPANHAS DE
+        SAÚDES`}
+          </Text>
         </ImageBackground>
       </Container>
       <ContainerView />

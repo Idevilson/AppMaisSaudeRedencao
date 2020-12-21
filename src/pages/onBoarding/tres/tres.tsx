@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ImageBackground, Image} from 'react-native';
+import {View, ImageBackground, Image, Text} from 'react-native';
 
 import {Container} from './styles';
 
@@ -41,6 +41,16 @@ const Tres: React.FC = () => {
               />
             </ImageBackground>
           </View>
+          <Text
+            style={{
+              color: '#fff',
+              marginLeft: 55,
+              fontSize: 30,
+              marginTop: -27,
+            }}>
+            {`LOCALIZAR POSTOS
+          DE SAÚDE`}
+          </Text>
         </ImageBackground>
       </Container>
     </>

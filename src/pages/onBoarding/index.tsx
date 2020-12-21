@@ -11,8 +11,36 @@ import Quinto from '../onBoarding/quinto/Quinto';
 const Onboarding: React.FC = () => {
   return (
     <Swiper
-      nextButton={<Text style={styles.buttonText}>PRÓXIMO</Text>}
-      prevButton={<Text style={styles.buttonText}>VOLTAR</Text>}
+      nextButton={
+        <View
+          style={{
+            borderRadius: 10,
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 90 * 2,
+            height: 70,
+            padding: 15,
+            backgroundColor: '#5CC859',
+            borderBottomColor: '#A8E9B5',
+          }}>
+          <Text style={styles.buttonTextNext}>VOLTAR</Text>
+        </View>
+      }
+      prevButton={
+        <View
+          style={{
+            borderRadius: 10,
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 90 * 2,
+            height: 70,
+            padding: 15,
+            backgroundColor: '#E9EBEF',
+            borderBottomColor: '#665EFF',
+          }}>
+          <Text style={styles.buttonTextBack}>VOLTAR</Text>
+        </View>
+      }
       buttonWrapperStyle={{
         backgroundColor: 'transparent',
         flexDirection: 'row',
@@ -31,14 +59,14 @@ const Onboarding: React.FC = () => {
       dot={
         <View
           style={{
-            backgroundColor: '#78849E',
-            width: 8,
-            height: 8,
+            backgroundColor: '#D3D6DF',
+            width: 9,
+            height: 9,
             borderRadius: 4,
             marginLeft: 3,
             marginRight: 3,
             marginTop: 3,
-            marginBottom: 80,
+            marginBottom: 85,
           }}
         />
       }
@@ -46,13 +74,13 @@ const Onboarding: React.FC = () => {
         <View
           style={{
             backgroundColor: '#665EFF',
-            width: 8,
-            height: 8,
+            width: 9,
+            height: 9,
             borderRadius: 4,
             marginLeft: 3,
             marginRight: 3,
             marginTop: 3,
-            marginBottom: 80,
+            marginBottom: 85,
           }}
         />
       }>
@@ -92,8 +120,12 @@ const styles = StyleSheet.create({
   slide5: {
     flex: 1,
   },
-  buttonText: {
-    color: '#030303',
+  buttonTextNext: {
+    color: '#fff',
+    fontSize: 30,
+  },
+  buttonTextBack: {
+    color: '#020202',
     fontSize: 30,
   },
 });
