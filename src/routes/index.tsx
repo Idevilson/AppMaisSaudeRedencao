@@ -7,7 +7,9 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const AppStack = createStackNavigator();
 
-import Onboarding from '../pages/onBoarding/index';
+// import Onboarding from '../pages/onBoarding/index';
+// import Intro from '../pages/intro';
+import SignIn from '../pages/SignIn';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -20,7 +22,7 @@ const AppRoutes: React.FC = () => {
           gestureDirection: 'horizontal',
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
-        <AppStack.Screen name="Onboarding1" component={Onboarding} />
+        <AppStack.Screen name="SignIn" component={SignIn} />
       </AppStack.Navigator>
     </NavigationContainer>
   );
