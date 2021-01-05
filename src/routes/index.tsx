@@ -1,31 +1,13 @@
 import React from 'react';
-import {
-  createStackNavigator,
-  CardStyleInterpolators,
-} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
 
-const AppStack = createStackNavigator();
+// import SignUp from './SignUp.routes';
 
-// import Onboarding from '../pages/onBoarding/index';
-// import Intro from '../pages/intro';
-import SignIn from '../pages/SignIn';
+// import Success from '../pages/SignUp/SingnUpSuccess';
+// import RecoverPassByEmail from '../pages/passwordRecovery/recoverPassByEmailInsert';
+import RecoveredPass from '../pages/CRUD/passwordRecovery/passwordRecover';
 
-const AppRoutes: React.FC = () => {
-  return (
-    <NavigationContainer>
-      <AppStack.Navigator
-        screenOptions={{
-          headerShown: false,
-          cardStyle: {backgroundColor: '#7B68EE'},
-          gestureEnabled: true,
-          gestureDirection: 'horizontal',
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-        }}>
-        <AppStack.Screen name="SignIn" component={SignIn} />
-      </AppStack.Navigator>
-    </NavigationContainer>
-  );
+const Routes: React.FC = () => {
+  return <RecoveredPass />;
 };
 
-export default AppRoutes;
+export default Routes;

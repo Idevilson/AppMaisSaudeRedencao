@@ -2,46 +2,37 @@ import React, {useCallback, useRef} from 'react';
 import {
   Image,
   View,
-  StyleSheet,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
   TextInput,
   Alert,
 } from 'react-native';
-import ButtonVerde from '../../components/ButtonVerde';
-import Input from '../../components/Input';
 
-import Icon from 'react-native-vector-icons/Feather';
+import ButtonVerde from '../../../components/ButtonVerde';
+import ButtonRed from '../../../components/ButtonRed';
+import Input from '../../../components/Input';
+
 //import {useNavigation} from '@react-navigation/native';
 import * as Yup from 'yup';
 
 import {Form} from '@unform/mobile';
 import {FormHandles} from '@unform/core';
 
-import {useAuth} from '../../hooks/auth';
+import {useAuth} from '../../../hooks/auth';
 
-import getValidationErrors from '../../utils/getValidationErros';
+import getValidationErrors from '../../../utils/getValidationErros';
 
-import {
-  Container,
-  Title,
-  CreateAccontButton,
-  ForgotPasswordText,
-  ForgotPassword,
-  CreateAccontButtonText,
-} from './styles';
+import {Container} from './styles';
 
 interface SignInFormData {
   email: string;
   password: string;
 }
 
-const SignIn: React.FC = () => {
+const SingUp1: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
-
-  //  const navigation = useNavigation();
 
   const {signIn} = useAuth();
 
@@ -80,6 +71,7 @@ const SignIn: React.FC = () => {
     },
     [signIn],
   );
+
   return (
     <>
       <KeyboardAvoidingView
@@ -92,28 +84,36 @@ const SignIn: React.FC = () => {
           <Container>
             <Image
               style={{
-                marginTop: 200,
-                marginBottom: -50,
-                marginRight: 30,
-                width: 360,
-                height: 160,
+                marginTop: 100,
+                marginBottom: 20,
+                marginRight: 20,
+                width: 70,
+                height: 70,
               }}
-              source={require('./assets/Logo.png')}
+              source={require('./assets/1-2.png')}
             />
-            <View>
-              <Title>Faça seu logon</Title>
-            </View>
             <Form
               ref={formRef}
               onSubmit={handleSignIn}
               style={{marginBottom: 30}}>
+              <Input
+                ref={passwordInputRef}
+                name="password"
+                icon="user"
+                placeholder="NOME COMPLETO"
+                secureTextEntry
+                returnKeyType="send"
+                onSubmitEditing={() => {
+                  formRef.current?.submitForm();
+                }}
+              />
               <Input
                 autoCorrect={false}
                 autoCapitalize="none"
                 keyboardType="email-address"
                 name="email"
                 icon="mail"
-                placeholder="E-mail"
+                placeholder="E-MAIL"
                 returnKeyType="next"
                 onSubmitEditing={() => {
                   passwordInputRef.current?.focus();
@@ -123,31 +123,48 @@ const SignIn: React.FC = () => {
                 ref={passwordInputRef}
                 name="password"
                 icon="lock"
-                placeholder="Senha"
+                placeholder="SENHA"
                 secureTextEntry
                 returnKeyType="send"
                 onSubmitEditing={() => {
                   formRef.current?.submitForm();
                 }}
               />
-              <ButtonVerde style={{marginBottom: 10}} onPress={() => {}}>
-                ENTRAR
-              </ButtonVerde>
-            </Form>
+              <Input
+                ref={passwordInputRef}
+                name="password"
+                icon="lock"
+                placeholder="REPITA A SENHA"
+                secureTextEntry
+                returnKeyType="send"
+                onSubmitEditing={() => {
+                  formRef.current?.submitForm();
+                }}
+              />
 
-            <ForgotPassword onPress={() => {}}>
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-            </ForgotPassword>
+              <View
+                style={{
+                  marginBottom: 10,
+                  marginTop: 10,
+                  justifyContent: 'space-around',
+                }}>
+                <ButtonRed
+                  style={{
+                    marginBottom: 10,
+                    marginTop: 10,
+                    justifyContent: 'space-around',
+                  }}
+                  onPress={() => {}}>
+                  VOLTAR
+                </ButtonRed>
+                <ButtonVerde onPress={() => {}}>PRÓXIMO</ButtonVerde>
+              </View>
+            </Form>
           </Container>
         </ScrollView>
-
-        <CreateAccontButton onPress={() => navigation.navigate('SignUp')}>
-          <Icon name="log-in" size={20} color="#fff" />
-          <CreateAccontButtonText>Criar uma conta</CreateAccontButtonText>
-        </CreateAccontButton>
       </KeyboardAvoidingView>
     </>
   );
 };
 
-export default SignIn;
+export default SingUp1;
