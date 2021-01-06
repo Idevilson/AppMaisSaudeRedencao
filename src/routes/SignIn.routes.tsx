@@ -9,7 +9,7 @@ const AppStack = createStackNavigator();
 
 // import Onboarding from '../pages/onBoarding/index';
 // import Intro from '../pages/intro';
-import SignIn from '../pages/CRUD/SignIn';
+import SignIn from '../pages/Crud/SignIn';
 
 const AppRoutes: React.FC = () => {
   return (

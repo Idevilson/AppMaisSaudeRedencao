@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import Swiper from 'react-native-swiper';
 
-import Um from '../onBoarding/um';
-import Dois from '../onBoarding/dois/dois';
-import Tres from '../onBoarding/tres/tres';
-import Quatro from '../onBoarding/quatro/quatro';
-import Quinto from '../onBoarding/quinto/Quinto';
+import Um from './um';
+import Dois from './dois/dois';
+import Tres from './tres/tres';
+import Quatro from './quatro/quatro';
+import Quinto from './quinto/Quinto';
 
 const Onboarding: React.FC = () => {
   return (

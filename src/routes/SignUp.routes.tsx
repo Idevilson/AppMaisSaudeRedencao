@@ -3,8 +3,8 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-import SignUp1 from '../pages/CRUD/SignUp/SingUp1';
-import SignUp2 from '../pages/CRUD/SignUp/SingUp2';
+import SignUp1 from '../pages/Crud/SignUp/SingUp1';
+import SignUp2 from '../pages/Crud/SignUp/SingUp2';
 
 const Tab = createMaterialTopTabNavigator();
 

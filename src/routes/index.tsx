@@ -4,10 +4,12 @@ import React from 'react';
 
 // import Success from '../pages/SignUp/SingnUpSuccess';
 // import RecoverPassByEmail from '../pages/passwordRecovery/recoverPassByEmailInsert';
-import RecoveredPass from '../pages/CRUD/passwordRecovery/passwordRecover';
+// import RecoveredPass from '../pages/Crud/passwordRecovery/passwordRecover';
+
+import Home from '../pages/Home';
 
 const Routes: React.FC = () => {
-  return <RecoveredPass />;
+  return <Home />;
 };
 
 export default Routes;
