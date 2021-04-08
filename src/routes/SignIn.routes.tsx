@@ -6,9 +6,6 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 
 const AppStack = createStackNavigator();
-
-// import Onboarding from '../pages/onBoarding/index';
-// import Intro from '../pages/intro';
 import SignIn from '../pages/Crud/SignIn';
 
 const AppRoutes: React.FC = () => {
@@ -29,3 +26,6 @@ const AppRoutes: React.FC = () => {
 };
 
 export default AppRoutes;
+
+// import Onboarding from '../pages/onBoarding/index';
+// import Intro from '../pages/intro';

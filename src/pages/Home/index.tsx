@@ -6,7 +6,11 @@ import ButtonMenu from '../../components/ButtonMenu';
 
 import {Container, SettingButton} from './style';
 
+import {useNavigation} from '@react-navigation/native';
+
 const Home: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -105,7 +109,7 @@ const Home: React.FC = () => {
               source={require('./assets/vacina.png')}
             />
 
-            <ButtonMenu onPress={() => {}}>{`CARTÃO DE
+            <ButtonMenu>{`CARTÃO DE
     VACINAS`}</ButtonMenu>
           </View>
 
@@ -150,7 +154,10 @@ const Home: React.FC = () => {
               }}
               source={require('./assets/mapa.png')}
             />
-            <ButtonMenu>{`POSTOS DE SAÚDE
+            <ButtonMenu
+              onPress={() =>
+                navigation.navigate('LocationHealth')
+              }>{`POSTOS DE SAÚDE
     MAIS PRÓXIMOS`}</ButtonMenu>
           </View>
 

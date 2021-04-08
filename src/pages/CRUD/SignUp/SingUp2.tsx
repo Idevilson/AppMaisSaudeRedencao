@@ -16,7 +16,8 @@ import ButtonRed from '../../../components/ButtonRed';
 import Input from '../../../components/Input';
 import {Picker} from '@react-native-picker/picker';
 
-//import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+
 import * as Yup from 'yup';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -38,6 +39,8 @@ const SingUp2: React.FC = () => {
   // picker selecionar genero
   const [selectedValue, setSelectedValue] = useState('Homem');
 
+  // navegação
+  const navigation = useNavigation();
   // date picker
   const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
@@ -190,11 +193,13 @@ const SingUp2: React.FC = () => {
                     marginTop: 10,
                     justifyContent: 'space-around',
                   }}
-                  onPress={() => {}}>
+                  onPress={() => navigation.goBack()}>
                   VOLTAR
                 </ButtonRed>
 
-                <ButtonVerde onPress={() => {}}>CADASTRAR</ButtonVerde>
+                <ButtonVerde onPress={() => navigation.navigate('SignIn')}>
+                  CADASTRAR
+                </ButtonVerde>
               </View>
             </Form>
           </Container>

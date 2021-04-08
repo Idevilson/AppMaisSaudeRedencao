@@ -6,7 +6,11 @@ import {Container} from './styles';
 import ButtonVerde from '../../components/ButtonVerde';
 import ButtonSinza from '../../components/ButtonSinza';
 
+import {useNavigation} from '@react-navigation/native';
+
 const Intro: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -33,10 +37,14 @@ const Intro: React.FC = () => {
                  vacinas em Redenção - PA`}
             </Text>
             <View style={styles.container}>
-              <ButtonVerde style={{marginBottom: 10}} onPress={() => {}}>
+              <ButtonVerde
+                style={{marginBottom: 10}}
+                onPress={() => navigation.navigate('Home')}>
                 ENTRAR
               </ButtonVerde>
-              <ButtonSinza onPress={() => {}}>CADASTRAR</ButtonSinza>
+              <ButtonSinza onPress={() => navigation.navigate('SignUp1')}>
+                CADASTRAR
+              </ButtonSinza>
             </View>
           </View>
         </ImageBackground>

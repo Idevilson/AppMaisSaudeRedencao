@@ -1,61 +1,56 @@
 import React from 'react';
-import {View, ImageBackground, Image, Text} from 'react-native';
+import {View, Image, Text} from 'react-native';
 
-//import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-import {Container, ContainerView} from './styles';
+import {
+  Container,
+  ContainerView,
+  ContainerPurple,
+  ContainerCicle,
+} from './styles';
+import ButtonVerde from './ButtonVerde';
 
 const Quatro: React.FC = () => {
-  //const navigation = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <>
       <Container>
-        <ImageBackground
-          source={require('./assets/bg.png')}
-          style={{
-            marginBottom: 50,
-            marginRight: 10,
-            width: 400,
-            height: 600,
-          }}>
+        <ContainerPurple>
           <View
             style={{
               justifyContent: 'center',
               alignItems: 'center',
               marginTop: 140,
             }}>
-            <ImageBackground
-              source={require('./assets/Ellipse.png')}
-              style={{
-                marginBottom: 50,
-                marginRight: 10,
-                width: 300,
-                height: 300,
-              }}>
+            <ContainerCicle>
               <Image
                 source={require('./assets/coracao.png')}
                 style={{
                   marginTop: 20,
-                  marginRight: 35,
+                  marginRight: 10,
                   width: 300,
                   height: 250,
                   resizeMode: 'contain',
                 }}
               />
-            </ImageBackground>
+            </ContainerCicle>
           </View>
           <Text
             style={{
               color: '#fff',
-              marginLeft: 90,
+              marginLeft: 60,
               fontSize: 30,
-              marginTop: -27,
+              marginTop: 20,
             }}>
             {`CAMPANHAS DE
         SAÚDES`}
           </Text>
-        </ImageBackground>
+        </ContainerPurple>
+        <ButtonVerde onPress={() => navigation.navigate('Intro')}>
+          Logar
+        </ButtonVerde>
       </Container>
       <ContainerView />
     </>

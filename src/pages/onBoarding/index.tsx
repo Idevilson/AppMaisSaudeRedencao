@@ -11,6 +11,7 @@ import Quinto from './quinto/Quinto';
 const Onboarding: React.FC = () => {
   return (
     <Swiper
+      autoplay={true}
       nextButton={
         <View
           style={{
@@ -66,7 +67,7 @@ const Onboarding: React.FC = () => {
             marginLeft: 3,
             marginRight: 3,
             marginTop: 3,
-            marginBottom: 85,
+            marginBottom: 80,
           }}
         />
       }
@@ -80,7 +81,7 @@ const Onboarding: React.FC = () => {
             marginLeft: 3,
             marginRight: 3,
             marginTop: 3,
-            marginBottom: 85,
+            marginBottom: 80,
           }}
         />
       }>

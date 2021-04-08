@@ -13,7 +13,8 @@ import ButtonVerde from '../../../components/ButtonVerde';
 import ButtonRed from '../../../components/ButtonRed';
 import Input from '../../../components/Input';
 
-//import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+
 import * as Yup from 'yup';
 
 import {Form} from '@unform/mobile';
@@ -35,6 +36,8 @@ const SingUp1: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null);
 
   const {signIn} = useAuth();
+
+  const navigation = useNavigation();
 
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
@@ -154,10 +157,12 @@ const SingUp1: React.FC = () => {
                     marginTop: 10,
                     justifyContent: 'space-around',
                   }}
-                  onPress={() => {}}>
+                  onPress={() => navigation.goBack()}>
                   VOLTAR
                 </ButtonRed>
-                <ButtonVerde onPress={() => {}}>PRÓXIMO</ButtonVerde>
+                <ButtonVerde onPress={() => navigation.navigate('SignUp2')}>
+                  PRÓXIMO
+                </ButtonVerde>
               </View>
             </Form>
           </Container>

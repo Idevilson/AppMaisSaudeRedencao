@@ -2,7 +2,6 @@ import React, {useCallback, useRef} from 'react';
 import {
   Image,
   View,
-  StyleSheet,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
@@ -13,7 +12,9 @@ import ButtonVerde from '../../../components/ButtonVerde';
 import Input from '../../../components/Input';
 
 import Icon from 'react-native-vector-icons/Feather';
-//import {useNavigation} from '@react-navigation/native';
+
+import {useNavigation} from '@react-navigation/native';
+
 import * as Yup from 'yup';
 
 import {Form} from '@unform/mobile';
@@ -41,7 +42,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
-  //  const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const {signIn} = useAuth();
 

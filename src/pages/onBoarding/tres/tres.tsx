@@ -1,57 +1,42 @@
 import React from 'react';
-import {View, ImageBackground, Image, Text} from 'react-native';
+import {View, Image, Text} from 'react-native';
 
-import {Container} from './styles';
+import {Container, ContainerPurple, ContainerCicle} from './styles';
 
 const Tres: React.FC = () => {
   return (
     <>
       <Container>
-        <ImageBackground
-          source={require('./assets/bg.png')}
-          style={{
-            marginBottom: 50,
-            marginRight: 10,
-            width: 400,
-            height: 600,
-          }}>
+        <ContainerPurple>
           <View
             style={{
               justifyContent: 'center',
               alignItems: 'center',
               marginTop: 140,
             }}>
-            <ImageBackground
-              source={require('./assets/Ellipse.png')}
-              style={{
-                marginBottom: 50,
-                marginRight: 10,
-                width: 300,
-                height: 300,
-              }}>
+            <ContainerCicle>
               <Image
-                source={require('./assets/logo.png')}
+                source={require('./assets/mapa.png')}
                 style={{
-                  marginBottom: 500,
-                  marginRight: 35,
-                  width: 300,
-                  height: 300,
+                  marginRight: 4,
+                  width: 220,
+                  height: 220,
                   resizeMode: 'contain',
                 }}
               />
-            </ImageBackground>
+            </ContainerCicle>
           </View>
           <Text
             style={{
               color: '#fff',
-              marginLeft: 55,
+              marginLeft: 40,
+              marginTop: 20,
               fontSize: 30,
-              marginTop: -27,
             }}>
             {`LOCALIZAR POSTOS
           DE SAÚDE`}
           </Text>
-        </ImageBackground>
+        </ContainerPurple>
       </Container>
     </>
   );
