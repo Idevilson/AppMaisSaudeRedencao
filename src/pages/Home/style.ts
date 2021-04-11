@@ -1,13 +1,13 @@
 import styled from 'styled-components/native';
-import {Platform} from 'react-native';
+
 import {RectButton} from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+
   background: #fff;
-  padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
 `;
 
 export const SettingButton = styled(RectButton)`
@@ -21,4 +21,23 @@ export const SettingButton = styled(RectButton)`
 
   justify-content: center;
   align-items: center;
+`;
+
+export const HeaderView = styled.View`
+  background-color: #7b68ee;
+  width: 100%;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+`;
+
+export const ButtonsAppMenu = styled.View`
+  margin-top: 7%;
+  width: 90%;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 100px;
+  background-color: #fff;
+  border-bottom-color: #000000;
+  justify-content: space-between;
+  flex-direction: row;
 `;

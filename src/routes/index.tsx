@@ -6,14 +6,16 @@ import React from 'react';
 // import RecoverPassByEmail from '../pages/passwordRecovery/recoverPassByEmailInsert';
 // import RecoveredPass from '../pages/Crud/passwordRecovery/passwordRecover';
 
-// import Home from '../pages/Home';
 // import LocationHealth from '../pages/LocationHealth';
-import AllNavigator from './AllNavigator';
+
+import StackHomeNavigation from './home.routes';
 
 // import Onboarding from '../pages/OnBoarding';
 
+// import LocationHealthStackNavigator from '../pages/LocationHealth/LocationHealth.routes';
+
 const Routes: React.FC = () => {
-  return <AllNavigator />;
+  return <StackHomeNavigation />;
 };
 
 export default Routes;

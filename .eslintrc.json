@@ -23,6 +23,7 @@
         "sourceType": "module"
     },
     "plugins": [
+        "react-native",
         "prettier",
         "react-hooks",
         "react",
