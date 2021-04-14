@@ -4,7 +4,6 @@ import {ImageBackground, Image, View, StyleSheet, Text} from 'react-native';
 import {Container} from './styles';
 
 import ButtonVerde from '../../components/ButtonVerde';
-import ButtonSinza from '../../components/ButtonSinza';
 
 import {useNavigation} from '@react-navigation/native';
 
@@ -42,9 +41,6 @@ const Intro: React.FC = () => {
                 onPress={() => navigation.navigate('Home')}>
                 ENTRAR
               </ButtonVerde>
-              <ButtonSinza onPress={() => navigation.navigate('SignUp1')}>
-                CADASTRAR
-              </ButtonSinza>
             </View>
           </View>
         </ImageBackground>

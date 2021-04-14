@@ -1,19 +1,21 @@
 import React from 'react';
-import {View, Image} from 'react-native';
+import {View, Image, Text} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
 
 import {
   Container,
   ContainerPurple,
   ContainerCicle,
   ContainerButtonsHandlePage,
+  WhiteNextButton,
   GreenNextButton,
   ButtonTextContent,
 } from './styles';
 
-import {useNavigation} from '@react-navigation/native';
-
-const Um: React.FC = () => {
+const Quinto: React.FC = () => {
   const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -26,19 +28,33 @@ const Um: React.FC = () => {
             }}>
             <ContainerCicle>
               <Image
-                source={require('./assets/MaisSaudeLogo.png')}
+                source={require('./assets/coracao.png')}
                 style={{
-                  marginRight: 30,
-                  marginTop: 10,
-                  width: 290,
+                  marginTop: 20,
+                  marginRight: 10,
+                  width: 300,
+                  height: 250,
                   resizeMode: 'contain',
                 }}
               />
             </ContainerCicle>
           </View>
+          <Text
+            style={{
+              color: '#fff',
+              marginLeft: 60,
+              fontSize: 30,
+              marginTop: 20,
+            }}>
+            {`CAMPANHAS DE
+        SAÚDES`}
+          </Text>
         </ContainerPurple>
         <ContainerButtonsHandlePage>
-          <GreenNextButton onPress={() => navigation.navigate('Dois')}>
+          <WhiteNextButton onPress={() => navigation.goBack()}>
+            <ButtonTextContent>Voltar</ButtonTextContent>
+          </WhiteNextButton>
+          <GreenNextButton onPress={() => navigation.navigate('Intro')}>
             <ButtonTextContent>Próximo</ButtonTextContent>
           </GreenNextButton>
         </ContainerButtonsHandlePage>
@@ -47,4 +63,4 @@ const Um: React.FC = () => {
   );
 };
 
-export default Um;
+export default Quinto;

@@ -1,9 +1,21 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
 
-import {Container, ContainerPurple, ContainerCicle} from './styles';
+import {
+  Container,
+  ContainerPurple,
+  ContainerCicle,
+  ContainerButtonsHandlePage,
+  WhiteNextButton,
+  GreenNextButton,
+  ButtonTextContent,
+} from './styles';
+
+import {useNavigation} from '@react-navigation/native';
 
 const Tres: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -37,6 +49,14 @@ const Tres: React.FC = () => {
           DE SAÚDE`}
           </Text>
         </ContainerPurple>
+        <ContainerButtonsHandlePage>
+          <WhiteNextButton onPress={() => navigation.goBack()}>
+            <ButtonTextContent>Voltar</ButtonTextContent>
+          </WhiteNextButton>
+          <GreenNextButton onPress={() => navigation.navigate('Quatro')}>
+            <ButtonTextContent>Próximo</ButtonTextContent>
+          </GreenNextButton>
+        </ContainerButtonsHandlePage>
       </Container>
     </>
   );

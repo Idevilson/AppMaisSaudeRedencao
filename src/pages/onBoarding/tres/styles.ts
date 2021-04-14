@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {getBottomSpace} from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   flex: 1;
@@ -11,8 +10,7 @@ export const ContainerPurple = styled.View`
   background-color: #7b68ee;
   border-radius: 10px;
   height: 540px;
-  width: 353px;
-  margin-top: -120px;
+  width: 90%;
 `;
 
 export const ContainerCicle = styled.View`
@@ -25,28 +23,40 @@ export const ContainerCicle = styled.View`
   justify-content: center;
   margin-left: -5px;
 `;
-export const CreateAccontButton = styled.TouchableOpacity`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #fff;
-  border-top-width: 1px;
-  border-color: #232129;
-  padding: 16px 0 ${16 + getBottomSpace()}px;
 
-  justify-content: center;
-  align-items: center;
+export const ContainerButtonsHandlePage = styled.View`
+  width: 90%;
+
   flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10%;
 `;
 
-export const CreateAccontButtonText = styled.Text`
-  color: #fff;
-  font-size: 18px;
-  font-family: 'RobotoSlab-Regular';
-  margin-left: 16px;
+export const WhiteNextButton = styled.TouchableOpacity`
+  opacity: 100;
+  background-color: #fff;
+  border-color: #000000;
+  border-width: 2px;
+  width: 45%;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 `;
 
-export const ContainerView = styled.View`
-  align-items: flex-end;
+export const GreenNextButton = styled.TouchableOpacity`
+  opacity: 100;
+  background-color: #5cc859;
+  border-color: #a8e9b5;
+  border-width: 2px;
+  width: 45%;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+`;
+
+export const ButtonTextContent = styled.Text`
+  font-size: 20px;
+  color: #000000;
 `;

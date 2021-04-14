@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {Text} from 'react-native';
 
@@ -9,23 +10,87 @@ import {useNavigation} from '@react-navigation/native';
 const OpemMapsPlanaltoII = createOpenLink({
   latitude: -8.057294,
   longitude: -50.041577,
-  end: 'R. Olga Lustosa ',
+  end: '-8.057294, -50.041577',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsCentro = createOpenLink({
+  latitude: -8.0279700,
+  longitude: -50.0357500,
+  end: 'R. Ademar Guimarães, 656 - St. Oeste',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsMarechalRondon = createOpenLink({
+  latitude: -8.0233200,
+  longitude: -50.0305300,
+  end: 'Av. Dr. Paulo Quartim Barbosa, 1549 - Bela Vista',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsVilaDaPedra = createOpenLink({
+  latitude: -8.0334100,
+  longitude: -8.0334100,
+  end: 'R. Vinte e Sete, 613 - Independencia',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsBelaVista = createOpenLink({
+  latitude: -8.0199400,
+  longitude: -50.0264300,
+  end: 'R. Deli Vilas Boas, 1545 - Bela Vista',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsSerrinha = createOpenLink({
+  latitude: -8.0233900,
+  longitude: -50.0181300,
+  end: 'Av. Otavio Baptist Arantes, 769 - Serrinha',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsCampusAltos = createOpenLink({
+  latitude: -8.0457800,
+  longitude: -50.0497400,
+  end: 'Redenção to R. Dos Agrimenso, 452 - Aripuanã',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsAvAraguaia = createOpenLink({
+  latitude: -8.0446500,
+  longitude: -50.0215700,
+  end: 'Av. Araguaia, 2549 - St. Morada da Paz',
   navigate_mode: 'navigate',
 });
 
 const OpemMapsAtilaDouglas = createOpenLink({
-  latitude: -8.055685,
-  longitude: -50.018156,
-  zoom: 50,
-  end: 'Posto de saúde Maria Francinete Lima Da Silva',
+  latitude: -8.0556850,
+  longitude: -50.0326730,
+  end: '-8.0556850,-50.0326730',
+  navigate_mode: 'navigate',
 });
 
-const OpemMapsVilaDaPedra = createOpenLink({
-  latitude: -8.033373,
-  longitude: -50.046152,
-  zoom: 50,
-  end: 'Posto de saúde Maurina Pinto da Costa',
+const OpemMapsAltoParana = createOpenLink({
+  latitude: -8.040532897817924,
+  longitude: -50.0165984238383,
+  end: '-8.040532897817924, -50.0165984238383',
+  navigate_mode: 'navigate',
 });
+
+const OpemMapsSantosDumont = createOpenLink({
+  latitude: -8.05029184325245,
+  longitude: -50.01519260184741,
+  end: '-8.05029184325245, -50.01519260184741',
+  navigate_mode: 'navigate',
+});
+
+const OpemMapsJardimAriane = createOpenLink({
+  latitude: -8.04293736040415,
+  longitude: -49.99980293960276,
+  end: '-8.04293736040415, -49.99980293960276',
+  navigate_mode: 'navigate',
+});
+
 
 import {
   Container,
@@ -61,7 +126,7 @@ const LocationHealth: React.FC = () => {
             </Text>
           </TopCardFindHealthUnity>
 
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsBelaVista}>
             <Icon
               name="navigation"
               size={22}
@@ -113,7 +178,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE SETOR ALTO PARANÁ
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsAltoParana}>
             <Icon
               name="navigation"
               size={22}
@@ -139,7 +204,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE SETOR JARDIM ARIANE
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsJardimAriane}>
             <Icon
               name="navigation"
               size={22}
@@ -165,7 +230,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE SETOR SANTOS DUMONT
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsSantosDumont}>
             <Icon
               name="navigation"
               size={22}
@@ -191,7 +256,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE SETOR MARECHAL RONDON
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsMarechalRondon}>
             <Icon
               name="navigation"
               size={22}
@@ -214,10 +279,10 @@ const LocationHealth: React.FC = () => {
             onPress={() => navigation.navigate('AvAraguaia')}>
             <NumberUnityHealth>7</NumberUnityHealth>
             <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR AV. ARAGUAIA
+              POSTO DE SAÚDE AV. ARAGUAIA
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsAvAraguaia}>
             <Icon
               name="navigation"
               size={22}
@@ -242,7 +307,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE SETOR CENTRO
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsCentro}>
             <Icon
               name="navigation"
               size={22}
@@ -346,7 +411,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE CAMPOS ALTOS
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsCampusAltos}>
             <Icon
               name="navigation"
               size={22}
@@ -370,7 +435,7 @@ const LocationHealth: React.FC = () => {
             <NumberUnityHealth>13</NumberUnityHealth>
             <Text style={{position: 'absolute'}}>POSTO DE SAÚDE SERRINHA</Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsSerrinha}>
             <Icon
               name="navigation"
               size={22}

@@ -1,19 +1,20 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
 
-import {useNavigation} from '@react-navigation/native';
-
 import {
   Container,
-  ContainerView,
   ContainerPurple,
   ContainerCicle,
+  ContainerButtonsHandlePage,
+  WhiteNextButton,
+  GreenNextButton,
+  ButtonTextContent,
 } from './styles';
-import ButtonVerde from './ButtonVerde';
+
+import {useNavigation} from '@react-navigation/native';
 
 const Quatro: React.FC = () => {
   const navigation = useNavigation();
-
   return (
     <>
       <Container>
@@ -26,11 +27,11 @@ const Quatro: React.FC = () => {
             }}>
             <ContainerCicle>
               <Image
-                source={require('./assets/coracao.png')}
+                source={require('./assets/gravida.png')}
                 style={{
-                  marginTop: 20,
-                  marginRight: 10,
-                  width: 300,
+                  marginBottom: 30,
+                  marginRight: 24,
+                  width: 250,
                   height: 250,
                   resizeMode: 'contain',
                 }}
@@ -40,19 +41,23 @@ const Quatro: React.FC = () => {
           <Text
             style={{
               color: '#fff',
-              marginLeft: 60,
+              marginLeft: 30,
               fontSize: 30,
               marginTop: 20,
             }}>
-            {`CAMPANHAS DE
-        SAÚDES`}
+            {`ACOMPANHAMENTO
+         PRÉ-NATAL`}
           </Text>
         </ContainerPurple>
-        <ButtonVerde onPress={() => navigation.navigate('Intro')}>
-          Logar
-        </ButtonVerde>
+        <ContainerButtonsHandlePage>
+          <WhiteNextButton onPress={() => navigation.goBack()}>
+            <ButtonTextContent>Voltar</ButtonTextContent>
+          </WhiteNextButton>
+          <GreenNextButton onPress={() => navigation.navigate('Quinto')}>
+            <ButtonTextContent>Próximo</ButtonTextContent>
+          </GreenNextButton>
+        </ContainerButtonsHandlePage>
       </Container>
-      <ContainerView />
     </>
   );
 };

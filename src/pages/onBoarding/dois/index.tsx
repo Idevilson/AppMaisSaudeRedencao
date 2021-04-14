@@ -1,9 +1,21 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
 
-import {Container, ContainerPurple, ContainerCicle} from './styles';
+import {
+  Container,
+  ContainerPurple,
+  ContainerCicle,
+  ContainerButtonsHandlePage,
+  WhiteNextButton,
+  GreenNextButton,
+  ButtonTextContent,
+} from './styles';
+
+import {useNavigation} from '@react-navigation/native';
 
 const Dois: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -34,6 +46,14 @@ const Dois: React.FC = () => {
             {'CARTÃO DE VACINAS'}
           </Text>
         </ContainerPurple>
+        <ContainerButtonsHandlePage>
+          <WhiteNextButton onPress={() => navigation.goBack()}>
+            <ButtonTextContent>Voltar</ButtonTextContent>
+          </WhiteNextButton>
+          <GreenNextButton onPress={() => navigation.navigate('Tres')}>
+            <ButtonTextContent>Próximo</ButtonTextContent>
+          </GreenNextButton>
+        </ContainerButtonsHandlePage>
       </Container>
     </>
   );
