@@ -8,19 +8,15 @@ import {
   TextInput,
   Alert,
   Button,
-  Text,
 } from 'react-native';
 
-import ButtonVerde from '../../../components/ButtonVerde';
 import ButtonRed from '../../../components/ButtonRed';
 import Input from '../../../components/Input';
-import {Picker} from '@react-native-picker/picker';
 
 import {useNavigation} from '@react-navigation/native';
 
 import * as Yup from 'yup';
 
-import DateTimePicker from '@react-native-community/datetimepicker';
 import {Form} from '@unform/mobile';
 import {FormHandles} from '@unform/core';
 
@@ -28,7 +24,7 @@ import {useAuth} from '../../../hooks/auth';
 
 import getValidationErrors from '../../../utils/getValidationErros';
 
-import {Container} from './styles';
+import {Container, ButtonNext, ButtonNextText} from './styles';
 
 interface SignInFormData {
   email: string;
@@ -36,30 +32,7 @@ interface SignInFormData {
 }
 
 const SingUp2: React.FC = () => {
-  // picker selecionar genero
-  const [selectedValue, setSelectedValue] = useState('Homem');
-
-  // navegação
   const navigation = useNavigation();
-  // date picker
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState('date');
-  const [show, setShow] = useState(false);
-
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === 'ios');
-    setDate(currentDate);
-  };
-
-  const showMode = (currentMode) => {
-    setShow(true);
-    setMode(currentMode);
-  };
-
-  const showDatepicker = () => {
-    showMode('date');
-  };
 
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
@@ -144,43 +117,7 @@ const SingUp2: React.FC = () => {
                   formRef.current?.submitForm();
                 }}
               />
-              <View>
-                <View>
-                  <Button onPress={showDatepicker} title="Show date picker!" />
-                </View>
 
-                {show && (
-                  <DateTimePicker
-                    testID="dateTimePicker"
-                    value={date}
-                    mode={mode}
-                    is24Hour={true}
-                    display="default"
-                    onChange={onChange}
-                  />
-                )}
-              </View>
-
-              <Text style={{fontSize: 20, color: '#fff'}}>
-                Selecione o genero
-              </Text>
-              <Picker
-                selectedValue={selectedValue}
-                style={{
-                  marginTop: 10,
-                  height: 50,
-                  width: 350,
-                  backgroundColor: '#fff',
-                  color: '#000000',
-                  borderRadius: 10,
-                  borderWidth: 10,
-                }}
-                onValueChange={(itemValue, itemIndex) =>
-                  setSelectedValue(itemValue)
-                }>
-                <Picker.Item label="Homem" value="Homem" />
-                <Picker.Item label="Mulher" value="Mulher" />
-              </Picker>
               <View
                 style={{
                   marginBottom: 10,
@@ -197,9 +134,9 @@ const SingUp2: React.FC = () => {
                   VOLTAR
                 </ButtonRed>
 
-                <ButtonVerde onPress={() => navigation.navigate('SignIn')}>
-                  CADASTRAR
-                </ButtonVerde>
+                <ButtonNext onPress={() => navigation.navigate('SignUp2')}>
+                  <ButtonNextText>PRÓXIMO</ButtonNextText>
+                </ButtonNext>
               </View>
             </Form>
           </Container>

@@ -27,3 +27,13 @@ export const BackButtonText = styled.Text`
   font-size: 16px;
   font-family: 'RobotoSlab-Regular';
 `;
+
+export const ButtonNext = styled.TouchableOpacity`
+  height: 30px;
+  width: 350px;
+  background-color: #5cc859;
+`;
+
+export const ButtonNextText = styled.Text`
+  font-size: 24px;
+`;

@@ -8,7 +8,6 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import ButtonVerde from '../../../components/ButtonVerde';
 import Input from '../../../components/Input';
 
 import Icon from 'react-native-vector-icons/Feather';
@@ -31,6 +30,8 @@ import {
   ForgotPasswordText,
   ForgotPassword,
   CreateAccontButtonText,
+  ButtonNext,
+  ButtonNextText,
 } from './styles';
 
 interface SignInFormData {
@@ -131,9 +132,10 @@ const SignIn: React.FC = () => {
                   formRef.current?.submitForm();
                 }}
               />
-              <ButtonVerde style={{marginBottom: 10}} onPress={() => {}}>
-                ENTRAR
-              </ButtonVerde>
+
+              <ButtonNext onPress={() => {}}>
+                <ButtonNextText>LOGAR</ButtonNextText>
+              </ButtonNext>
             </Form>
 
             <ForgotPassword onPress={() => {}}>
@@ -142,7 +144,7 @@ const SignIn: React.FC = () => {
           </Container>
         </ScrollView>
 
-        <CreateAccontButton onPress={() => navigation.navigate('SignUp')}>
+        <CreateAccontButton onPress={() => navigation.navigate('SignUp1')}>
           <Icon name="log-in" size={20} color="#fff" />
           <CreateAccontButtonText>Criar uma conta</CreateAccontButtonText>
         </CreateAccontButton>

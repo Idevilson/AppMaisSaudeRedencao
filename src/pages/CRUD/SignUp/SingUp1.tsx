@@ -9,7 +9,6 @@ import {
   Alert,
 } from 'react-native';
 
-import ButtonVerde from '../../../components/ButtonVerde';
 import ButtonRed from '../../../components/ButtonRed';
 import Input from '../../../components/Input';
 
@@ -24,7 +23,7 @@ import {useAuth} from '../../../hooks/auth';
 
 import getValidationErrors from '../../../utils/getValidationErros';
 
-import {Container} from './styles';
+import {Container, ButtonNext, ButtonNextText} from './styles';
 
 interface SignInFormData {
   email: string;
@@ -160,9 +159,9 @@ const SingUp1: React.FC = () => {
                   onPress={() => navigation.goBack()}>
                   VOLTAR
                 </ButtonRed>
-                <ButtonVerde onPress={() => navigation.navigate('SignUp2')}>
-                  PRÓXIMO
-                </ButtonVerde>
+                <ButtonNext onPress={() => navigation.navigate('SignUp2')}>
+                  <ButtonNextText>PRÓXIMO</ButtonNextText>
+                </ButtonNext>
               </View>
             </Form>
           </Container>

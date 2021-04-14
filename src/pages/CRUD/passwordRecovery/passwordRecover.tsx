@@ -1,10 +1,15 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
 
-import ButtonVerde from '../../../components/ButtonVerde';
 import Input from '../../../components/Input';
 
-import {Container, BackButton, BackButtonText} from './styles';
+import {
+  Container,
+  BackButton,
+  BackButtonText,
+  ButtonNext,
+  ButtonNextText,
+} from './styles';
 
 import Icon from 'react-native-vector-icons/Feather';
 import {Form} from '@unform/mobile';
@@ -42,7 +47,9 @@ const RecoveredPass: React.FC = () => {
           <TouchableOpacity />
         </Form>
 
-        <ButtonVerde>Redefinir</ButtonVerde>
+        <ButtonNext onPress={() => {}}>
+          <ButtonNextText>PRÓXIMO</ButtonNextText>
+        </ButtonNext>
       </Container>
     </>
   );

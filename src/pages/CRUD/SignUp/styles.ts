@@ -48,3 +48,16 @@ export const CreateAccontButtonText = styled.Text`
   font-family: 'RobotoSlab-Regular';
   margin-left: 16px;
 `;
+
+export const ButtonNext = styled.TouchableOpacity`
+  height: 60px;
+  width: 370px;
+  background-color: #5cc859;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+`;
+
+export const ButtonNextText = styled.Text`
+  font-size: 24px;
+`;

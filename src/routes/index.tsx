@@ -6,16 +6,16 @@ import React from 'react';
 // import RecoverPassByEmail from '../pages/passwordRecovery/recoverPassByEmailInsert';
 // import RecoveredPass from '../pages/Crud/passwordRecovery/passwordRecover';
 
-// import FirstOpeningApp from './firstOpeningApp.routes';
+import FirstOpeningApp from './firstOpeningApp.routes';
 
 // import StackHomeNavigation from './home.routes';
 
 // import Onboarding from '../pages/OnBoarding';
 
-import LocationHealthStackNavigator from '../pages/LocationHealth/LocationHealth.routes';
+// import LocationHealthStackNavigator from '../pages/LocationHealth/LocationHealth.routes';
 
 const Routes: React.FC = () => {
-  return <LocationHealthStackNavigator />;
+  return <FirstOpeningApp />;
 };
 
 export default Routes;

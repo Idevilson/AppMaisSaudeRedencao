@@ -91,6 +91,14 @@ const OpemMapsJardimAriane = createOpenLink({
   navigate_mode: 'navigate',
 });
 
+const OpemMapsVilaMaria = createOpenLink({
+  latitude: -8.058353866395294,
+  longitude: -50.01392831325704,
+  end: '-8.058351874601115, -50.01392764270561',
+  navigate_mode: 'navigate',
+});
+
+
 
 import {
   Container,
@@ -385,7 +393,7 @@ const LocationHealth: React.FC = () => {
               POSTO DE SAÚDE VILA MARIA
             </Text>
           </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={() => {}}>
+          <ButtonOpemMaps onPress={OpemMapsVilaMaria}>
             <Icon
               name="navigation"
               size={22}

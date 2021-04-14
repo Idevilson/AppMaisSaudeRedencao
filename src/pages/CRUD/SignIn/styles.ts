@@ -17,6 +17,19 @@ export const Title = styled.Text`
   margin: 64px 0 24px;
 `;
 
+export const ButtonNext = styled.TouchableOpacity`
+  height: 60px;
+  width: 370px;
+  background-color: #5cc859;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+`;
+
+export const ButtonNextText = styled.Text`
+  font-size: 24px;
+`;
+
 export const ForgotPassword = styled.TouchableOpacity`
   margin-top: -20px;
 `;

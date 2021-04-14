@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, View} from 'react-native';
 
-import ButtonVerde from '../../../components/ButtonVerde';
+import {ButtonNext, ButtonNextText} from './styles';
 
 const Success: React.FC = () => {
   return (
@@ -17,7 +17,9 @@ const Success: React.FC = () => {
           }}
           source={require('./assets/success.png')}
         />
-        <ButtonVerde onPress={() => {}}>LOGAR</ButtonVerde>
+        <ButtonNext onPress={() => {}}>
+          <ButtonNextText>PRÓXIMO</ButtonNextText>
+        </ButtonNext>
       </View>
     </>
   );
