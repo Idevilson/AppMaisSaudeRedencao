@@ -17,7 +17,7 @@ export const Title = styled.Text`
   margin: 64px 0 24px;
 `;
 
-export const ForgotPassword = styled.TouchableOpacity`
+export const ForgxotPassword = styled.TouchableOpacity`
   margin-top: -20px;
 `;
 
@@ -51,7 +51,7 @@ export const CreateAccontButtonText = styled.Text`
 
 export const ButtonNext = styled.TouchableOpacity`
   height: 60px;
-  width: 370px;
+  align-self: stretch;
   background-color: #5cc859;
   align-items: center;
   justify-content: center;

@@ -29,9 +29,13 @@ export const BackButtonText = styled.Text`
 `;
 
 export const ButtonNext = styled.TouchableOpacity`
-  height: 30px;
-  width: 350px;
+  height: 60px;
+  width: 105%;
+
   background-color: #5cc859;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 `;
 
 export const ButtonNextText = styled.Text`

@@ -19,7 +19,7 @@ export const Title = styled.Text`
 
 export const ButtonNext = styled.TouchableOpacity`
   height: 60px;
-  width: 370px;
+  align-self: stretch;
   background-color: #5cc859;
   align-items: center;
   justify-content: center;

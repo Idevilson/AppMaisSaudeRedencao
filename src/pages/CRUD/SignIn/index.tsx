@@ -133,18 +133,19 @@ const SignIn: React.FC = () => {
                 }}
               />
 
-              <ButtonNext onPress={() => {}}>
+              <ButtonNext onPress={() => navigation.navigate('Home')}>
                 <ButtonNextText>LOGAR</ButtonNextText>
               </ButtonNext>
             </Form>
 
-            <ForgotPassword onPress={() => {}}>
+            <ForgotPassword
+              onPress={() => navigation.navigate('RecoveredPassByEmailInsert')}>
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
           </Container>
         </ScrollView>
 
-        <CreateAccontButton onPress={() => navigation.navigate('SignUp1')}>
+        <CreateAccontButton onPress={() => navigation.navigate('SignUp')}>
           <Icon name="log-in" size={20} color="#fff" />
           <CreateAccontButtonText>Criar uma conta</CreateAccontButtonText>
         </CreateAccontButton>

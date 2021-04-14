@@ -20,7 +20,7 @@ export const ContainerAgentes = styled.View`
 `;
 
 export const Agents = styled.Image`
-  height: 590px;
+  height: 620px;
   width: 100%;
 `;
 export const ButtonNext = styled.TouchableOpacity`

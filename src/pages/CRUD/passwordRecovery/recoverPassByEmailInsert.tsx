@@ -1,7 +1,9 @@
 import React, {useRef} from 'react';
-import {Image, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
 import Input from '../../../components/Input';
+
+import {useNavigation} from '@react-navigation/native';
 
 import {
   Container,
@@ -18,23 +20,19 @@ import {FormHandles} from '@unform/core';
 const RecoverPassByEmail: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
         <BackButton>
-          <BackButtonText>
+          <BackButtonText onPress={() => navigation.goBack()}>
             <Icon name="log-in" size={20} color="#fff" /> VOLTAR
           </BackButtonText>
         </BackButton>
-        <Image
-          style={{
-            marginTop: 100,
-            marginRight: 20,
-            width: 310,
-            height: 70,
-          }}
-          source={require('./assets/message.png')}
-        />
+        <Text style={{fontSize: 30, color: '#fff'}}>
+          Tela de inserir o email cadastrado
+        </Text>
         <Form ref={formRef} onSubmit={() => {}} style={{marginTop: 40}}>
           <Input
             ref={() => {}}
@@ -49,7 +47,8 @@ const RecoverPassByEmail: React.FC = () => {
           <TouchableOpacity />
         </Form>
 
-        <ButtonNext onPress={() => {}}>
+        <ButtonNext
+          onPress={() => navigation.navigate('InsertCodeSendedToEmail')}>
           <ButtonNextText>PRÓXIMO</ButtonNextText>
         </ButtonNext>
       </Container>

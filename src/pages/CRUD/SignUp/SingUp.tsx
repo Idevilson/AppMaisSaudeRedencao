@@ -1,4 +1,4 @@
-import React, {useCallback, useRef, useState} from 'react';
+import React, {useCallback, useRef} from 'react';
 import {
   Image,
   View,
@@ -7,7 +7,6 @@ import {
   Platform,
   TextInput,
   Alert,
-  Button,
 } from 'react-native';
 
 import ButtonRed from '../../../components/ButtonRed';
@@ -31,13 +30,13 @@ interface SignInFormData {
   password: string;
 }
 
-const SingUp2: React.FC = () => {
-  const navigation = useNavigation();
-
+const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
   const {signIn} = useAuth();
+
+  const navigation = useNavigation();
 
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
@@ -87,18 +86,64 @@ const SingUp2: React.FC = () => {
           <Container>
             <Image
               style={{
-                marginTop: 250,
+                marginTop: '50%',
                 marginBottom: 20,
-                marginRight: 10,
-                width: 95,
+                marginRight: 20,
+                width: 70,
                 height: 70,
               }}
-              source={require('./assets/2-2.png')}
+              source={require('./assets/AddUser.png')}
             />
             <Form
               ref={formRef}
               onSubmit={handleSignIn}
-              style={{marginBottom: 200}}>
+              style={{marginBottom: 30}}>
+              <Input
+                ref={passwordInputRef}
+                name="password"
+                icon="user"
+                placeholder="NOME COMPLETO"
+                secureTextEntry
+                returnKeyType="send"
+                onSubmitEditing={() => {
+                  formRef.current?.submitForm();
+                }}
+              />
+              <Input
+                autoCorrect={false}
+                autoCapitalize="none"
+                keyboardType="email-address"
+                name="email"
+                icon="mail"
+                placeholder="E-MAIL"
+                returnKeyType="next"
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus();
+                }}
+              />
+              <Input
+                ref={passwordInputRef}
+                name="password"
+                icon="lock"
+                placeholder="SENHA"
+                secureTextEntry
+                returnKeyType="send"
+                onSubmitEditing={() => {
+                  formRef.current?.submitForm();
+                }}
+              />
+              <Input
+                ref={passwordInputRef}
+                name="password"
+                icon="lock"
+                placeholder="REPITA A SENHA"
+                secureTextEntry
+                returnKeyType="send"
+                onSubmitEditing={() => {
+                  formRef.current?.submitForm();
+                }}
+              />
+
               <Input
                 ref={passwordInputRef}
                 name="CALENDÁRIO"
@@ -133,9 +178,8 @@ const SingUp2: React.FC = () => {
                   onPress={() => navigation.goBack()}>
                   VOLTAR
                 </ButtonRed>
-
-                <ButtonNext onPress={() => navigation.navigate('SignUp2')}>
-                  <ButtonNextText>PRÓXIMO</ButtonNextText>
+                <ButtonNext onPress={() => navigation.navigate('Success')}>
+                  <ButtonNextText>CADASTRAR</ButtonNextText>
                 </ButtonNext>
               </View>
             </Form>
@@ -146,4 +190,4 @@ const SingUp2: React.FC = () => {
   );
 };
 
-export default SingUp2;
+export default SignUp;

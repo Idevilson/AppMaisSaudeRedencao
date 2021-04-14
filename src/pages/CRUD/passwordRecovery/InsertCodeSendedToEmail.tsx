@@ -12,9 +12,14 @@ import {
 } from './styles';
 
 import Icon from 'react-native-vector-icons/Feather';
+
+import {useNavigation} from '@react-navigation/native';
+
 import {Form} from '@unform/mobile';
 
-const RecoveredPass: React.FC = () => {
+const InsertCodeSendedToEmail: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <Container>
@@ -22,26 +27,16 @@ const RecoveredPass: React.FC = () => {
           <BackButtonText>
             <Icon name="log-in" size={20} color="#fff" /> VOLTAR
           </BackButtonText>
+          <Text style={{fontSize: 30, color: '#fff'}}>
+            Ensira o código enviado para o seu email
+          </Text>
         </BackButton>
-        <Text style={{fontSize: 30, color: '#fff'}}>
-          Tela da recuperação de senha
-        </Text>
         <Form ref={() => {}} onSubmit={() => {}} style={{marginTop: 40}}>
           <Input
             ref={() => {}}
             name="password1"
             icon="mail"
-            placeholder="INFORME A SENHA"
-            secureTextEntry
-            returnKeyType="send"
-            onSubmitEditing={() => {}}
-          />
-
-          <Input
-            ref={() => {}}
-            name="password2"
-            icon="mail"
-            placeholder="REPITA A SENHA"
+            placeholder="INFORME O CÓDIGO ENVIADO PELO EMAIL"
             secureTextEntry
             returnKeyType="send"
             onSubmitEditing={() => {}}
@@ -50,7 +45,7 @@ const RecoveredPass: React.FC = () => {
           <TouchableOpacity />
         </Form>
 
-        <ButtonNext onPress={() => {}}>
+        <ButtonNext onPress={() => navigation.navigate('RecoveredPass')}>
           <ButtonNextText>PRÓXIMO</ButtonNextText>
         </ButtonNext>
       </Container>
@@ -58,4 +53,4 @@ const RecoveredPass: React.FC = () => {
   );
 };
 
-export default RecoveredPass;
+export default InsertCodeSendedToEmail;

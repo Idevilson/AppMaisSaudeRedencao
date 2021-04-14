@@ -52,7 +52,7 @@ const OpemMapsSerrinha = createOpenLink({
 const OpemMapsCampusAltos = createOpenLink({
   latitude: -8.0457800,
   longitude: -50.0497400,
-  end: 'Redenção to R. Dos Agrimenso, 452 - Aripuanã',
+  end: '-8.0457800, -50.0497400',
   navigate_mode: 'navigate',
 });
 
