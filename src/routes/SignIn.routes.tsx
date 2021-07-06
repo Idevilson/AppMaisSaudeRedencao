@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  createStackNavigator,
-  CardStyleInterpolators,
-} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import {NavigationContainer} from '@react-navigation/native';
 
@@ -30,6 +27,10 @@ import VilaMaria from '../pages/LocationHealth/VilaMaria';
 import CamposAltos from '../pages/LocationHealth/CamposAltos';
 import Serrinha from '../pages/LocationHealth/Serrinha';
 
+import WalletVaccine from '../pages/WalletVaccine';
+import Settings from '../pages/settings';
+import HealthCampaigns from '../pages/healthCampaigns';
+
 const Stack = createStackNavigator();
 
 const SignInRouter: React.FC = () => {
@@ -39,9 +40,6 @@ const SignInRouter: React.FC = () => {
         screenOptions={{
           headerShown: false,
           cardStyle: {backgroundColor: '#7B68EE'},
-          gestureEnabled: true,
-          gestureDirection: 'horizontal',
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
@@ -72,7 +70,12 @@ const SignInRouter: React.FC = () => {
         <Stack.Screen name="VilaMaria" component={VilaMaria} />
         <Stack.Screen name="CamposAltos" component={CamposAltos} />
         <Stack.Screen name="Serrinha" component={Serrinha} />
-        <Stack.Screen name="SignUp" component={SignUp} />
+
+        <Stack.Screen name="WalletVaccine" component={WalletVaccine} />
+
+        <Stack.Screen name="Settings" component={Settings} />
+
+        <Stack.Screen name="HealthCampaigns" component={HealthCampaigns} />
       </Stack.Navigator>
     </NavigationContainer>
   );

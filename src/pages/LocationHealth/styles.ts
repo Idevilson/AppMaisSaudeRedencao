@@ -17,34 +17,7 @@ export const BackButton = styled.TouchableOpacity`
   margin-right: 80%;
 `;
 
-export const ButtonOpemMaps = styled.TouchableOpacity`
-  background-color: #7b68ee;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 8px;
-`;
-
-export const CardFindHealthUnity = styled.View`
-  width: 90%;
-
-  align-self: center;
-  background-color: #fff;
-  align-items: center;
-  border-radius: 10px;
-  border-width: 2px;
-  border-color: #000000;
-  margin-top: 20px;
-`;
-
-export const TopCardFindHealthUnity = styled.TouchableOpacity`
-  flex-direction: row;
-  width: 100%;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-`;
+export const AboutUnityHealth = styled.TouchableOpacity``;
 
 export const ScrowCardsContainer = styled.ScrollView`
   flex: 1;
@@ -53,4 +26,19 @@ export const ScrowCardsContainer = styled.ScrollView`
 export const NumberUnityHealth = styled.Text`
   margin-right: 90%;
   font-size: 20px;
+`;
+
+export const ButtonsAppMenu = styled.View`
+  flex: 1;
+  align-self: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  width: 90%;
+  border-radius: 20px;
+  border-width: 2px;
+  height: 100px;
+  background-color: #fff;
+  border-bottom-color: #000000;
+  justify-content: space-between;
+  flex-direction: row;
 `;

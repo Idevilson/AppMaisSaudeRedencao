@@ -1,11 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, Image} from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 import {createOpenLink} from 'react-native-open-maps';
 
 import {useNavigation} from '@react-navigation/native';
+
+import ButtonMenu from '../../components/ButtonMenu';
 
 const OpemMapsPlanaltoII = createOpenLink({
   latitude: -8.057294,
@@ -104,11 +106,9 @@ import {
   Container,
   Header,
   BackButton,
-  CardFindHealthUnity,
-  ButtonOpemMaps,
   ScrowCardsContainer,
-  TopCardFindHealthUnity,
-  NumberUnityHealth,
+  AboutUnityHealth,
+  ButtonsAppMenu,
 } from './styles';
 
 const LocationHealth: React.FC = () => {
@@ -117,7 +117,7 @@ const LocationHealth: React.FC = () => {
   return (
     <Container>
       <Header>
-        <BackButton onPress={() => {}}>
+        <BackButton onPress={() => navigation.goBack()}>
           <Icon name="arrow-left" size={35} color="#fff" />
         </BackButton>
         <Text style={{color: '#fff', fontSize: 30, position: 'absolute'}}>
@@ -125,341 +125,269 @@ const LocationHealth: React.FC = () => {
         </Text>
       </Header>
       <ScrowCardsContainer>
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('BelaVista')}>
-            <NumberUnityHealth>1</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR BELA VISTA
-            </Text>
-          </TopCardFindHealthUnity>
 
-          <ButtonOpemMaps onPress={OpemMapsBelaVista}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+            <ButtonMenu
+              onPress={() =>
+                navigation.navigate('AltoParana')
+              }>{` UNIDADE DE SAÚDE
+SETOR ALTO PARANÁ`}
+            </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsAltoParana}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('PlanaltoII')}>
-            <NumberUnityHealth>2</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR PLANALTO II
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsPlanaltoII}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+            <ButtonMenu
+              onPress={() =>
+                navigation.navigate('AtilaDouglas')
+              }>{`    UNIDAD DE SAÚDE
+SETOR ATILA DOUGLAS`}
+            </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsAtilaDouglas}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('AltoParana')}>
-            <NumberUnityHealth>3</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR ALTO PARANÁ
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsAltoParana}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+            <ButtonMenu
+              onPress={() =>
+                navigation.navigate('AvAraguaia')
+              }>{`UNIDADE DE SAÚDE
+      AV. ARAGUAIA`}
+            </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsAvAraguaia}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('JardimAriane')}>
-            <NumberUnityHealth>4</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR JARDIM ARIANE
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsJardimAriane}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('BelaVista')
+              }>{`UNIDADE DE SAÚDE
+ SETOR BELA VISTA`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsBelaVista}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('SantosDumont')}>
-            <NumberUnityHealth>5</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR SANTOS DUMONT
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsSantosDumont}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('CamposAltos')
+              }>{`  UNIDADE DE SAÚDE
+SETOR CAMPUS ALTOS`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsCampusAltos}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('MarechalRondon')}>
-            <NumberUnityHealth>6</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR MARECHAL RONDON
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsMarechalRondon}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('Centro')
+              }>{`UNIDADE DE SAÚDE
+    SETOR CENTRO`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsCentro}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('AvAraguaia')}>
-            <NumberUnityHealth>7</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE AV. ARAGUAIA
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsAvAraguaia}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
-              style={{
-                color: '#fff',
-                fontSize: 22,
-                marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity onPress={() => navigation.navigate('Centro')}>
-            <NumberUnityHealth>8</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE SETOR CENTRO
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsCentro}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('JardimAriane')
+              }>{`    UNIDADE DE SAÚDE
+ SETOR JARDIM ARIANE`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsJardimAriane}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('VilaDaPedra')}>
-            <NumberUnityHealth>9</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE VILA DA PEDRA
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsVilaDaPedra}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('MarechalRondon')
+              }>{`  UNIDADE DE SAÚDE
+   SETOR MARECHAL
+            RONDON`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsMarechalRondon}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('AtilaDouglas')}>
-            <NumberUnityHealth>10</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE ATILA DOUGLAS
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsAtilaDouglas}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('PlanaltoII')
+              }>{`UNIDADE DE SAÚDE
+SETOR PLANALTO II`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsPlanaltoII}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('VilaMaria')}>
-            <NumberUnityHealth>11</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE VILA MARIA
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsVilaMaria}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+          <ButtonMenu
+              onPress={() =>
+                navigation.navigate('SantosDumont')
+              }>{`    UNIDADE DE SAÚDE
+SETOR SANTOS DUMONT`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsSantosDumont}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('CamposAltos')}>
-            <NumberUnityHealth>12</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>
-              POSTO DE SAÚDE CAMPOS ALTOS
-            </Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsCampusAltos}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        <ButtonsAppMenu>
+            <ButtonMenu
+              onPress={() =>
+                navigation.navigate('Serrinha')
+              }>{`UNIDADE DE SAÚDE
+  SETOR SERRINHA`}
+            </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsSerrinha}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
 
-        <CardFindHealthUnity>
-          <TopCardFindHealthUnity
-            onPress={() => navigation.navigate('Serrinha')}>
-            <NumberUnityHealth>13</NumberUnityHealth>
-            <Text style={{position: 'absolute'}}>POSTO DE SAÚDE SERRINHA</Text>
-          </TopCardFindHealthUnity>
-          <ButtonOpemMaps onPress={OpemMapsSerrinha}>
-            <Icon
-              name="navigation"
-              size={22}
-              color="#fff"
-              style={{marginTop: 5, marginRight: 10}}
-            />
-            <Text
+        </ButtonsAppMenu>
+
+        <ButtonsAppMenu>
+            <ButtonMenu
+              onPress={() =>
+                navigation.navigate('VilaDaPedra')
+              }>{`  UNIDADE DE SAÚDE
+SETOR VILA DA PEDRA`}</ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsVilaDaPedra}>
+            <Image
               style={{
-                color: '#fff',
-                fontSize: 22,
+                width: 80,
+                height: 80,
+                marginTop: 5,
                 marginRight: 30,
-              }}>
-              IR PARA O MAPS
-            </Text>
-          </ButtonOpemMaps>
-        </CardFindHealthUnity>
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+
+        </ButtonsAppMenu>
+
+        <ButtonsAppMenu>
+         <ButtonMenu
+              onPress={() =>
+                navigation.navigate('VilaMaria')
+              }>{`UNIDAD DE SAÚDE
+SETOR VILA MARIA`}
+          </ButtonMenu>
+          <AboutUnityHealth onPress={OpemMapsVilaMaria}>
+            <Image
+              style={{
+                width: 80,
+                height: 80,
+                marginTop: 5,
+                marginRight: 30,
+              }}
+              source={require('./assets/mapa.png')}
+            />
+          </AboutUnityHealth>
+        </ButtonsAppMenu>
       </ScrowCardsContainer>
     </Container>
   );

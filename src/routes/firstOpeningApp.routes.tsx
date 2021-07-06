@@ -35,6 +35,8 @@ import VilaMaria from '../pages/LocationHealth/VilaMaria';
 import CamposAltos from '../pages/LocationHealth/CamposAltos';
 import Serrinha from '../pages/LocationHealth/Serrinha';
 
+import WalletVaccine from '../pages/WalletVaccine';
+
 const Stack = createStackNavigator();
 
 const FirstOpeningApp: React.FC = () => {
@@ -45,6 +47,13 @@ const FirstOpeningApp: React.FC = () => {
           headerShown: false,
           cardStyle: {backgroundColor: '#7b68ee'},
         }}>
+        <Stack.Screen name="Um" component={Um} />
+        <Stack.Screen name="Dois" component={Dois} />
+        <Stack.Screen name="Tres" component={Tres} />
+        <Stack.Screen name="Quatro" component={Quatro} />
+        <Stack.Screen name="Quinto" component={Quinto} />
+        <Stack.Screen name="Intro" component={Intro} />
+
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
 
@@ -73,12 +82,8 @@ const FirstOpeningApp: React.FC = () => {
         <Stack.Screen name="VilaMaria" component={VilaMaria} />
         <Stack.Screen name="CamposAltos" component={CamposAltos} />
         <Stack.Screen name="Serrinha" component={Serrinha} />
-        <Stack.Screen name="Um" component={Um} />
-        <Stack.Screen name="Dois" component={Dois} />
-        <Stack.Screen name="Tres" component={Tres} />
-        <Stack.Screen name="Quatro" component={Quatro} />
-        <Stack.Screen name="Quinto" component={Quinto} />
-        <Stack.Screen name="Intro" component={Intro} />
+
+        <Stack.Screen name="WalletVaccine" component={WalletVaccine} />
       </Stack.Navigator>
     </NavigationContainer>
   );

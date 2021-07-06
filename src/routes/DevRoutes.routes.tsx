@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Home from '../pages/Home';
+import WalletVaccine from '../pages/WalletVaccine';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ const DevRoutes: React.FC = () => {
             headerShown: false,
             cardStyle: {backgroundColor: '#7b68ee'},
           }}>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="WalletVaccine" component={WalletVaccine} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
