@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import {Text, Image, Pressable } from 'react-native';
 
-
 import Arrow from 'react-native-vector-icons/Feather';
 import Share from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -29,6 +28,7 @@ const HealthCampaigns: React.FC = () => {
 
   return (
     <Container>
+
       <Header>
         <BackButton onPress={() => navigation.goBack()}>
           <Arrow name="arrow-left" size={35} color="#fff" />
@@ -37,6 +37,7 @@ const HealthCampaigns: React.FC = () => {
           CAMPANHAS DE SAÚDE
         </Text>
       </Header>
+
       <ScrowCampaignsContainer>
         <ContainerHealthCampaign>
 
